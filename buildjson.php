@@ -23,4 +23,4 @@ foreach($rows as $key => $var)
 	$rows[$key] = $temp;
 }
 
-file_put_contents($target_file, json_encode($rows));
+file_put_contents($target_file, 'var ingredients = ' . json_encode($rows) . ';');
