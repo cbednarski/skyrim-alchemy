@@ -4,12 +4,71 @@
     <title>Skyrim Alchemy</title>
     <script src="skyrim-ingredients.js"></script>
     <script src="skyrim-alchemy.js"></script>
-    <style></style>
+    <style>
+        body{
+            font-family: "PT Sans", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+        }
+        .ingredient{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #aaa;
+            background-color: #eee;
+            margin-bottom: 3px;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+        .ingredient h4, .ingredient ul, .ingredient li{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .ingredient h4{
+            margin-left: 5px;
+        }
+        .ingredient h4 span.id{
+            float: right;
+            margin-right: 5px;
+            margin-top: 1px;
+            color: #bbb;
+            font-weight: normal;
+            font-size: .9em;
+            font-family: monospace;
+        }
+        .ingredient li{
+            display: block;
+            width: 110px;
+            padding: 0 2px;
+            margin-left: 30px;
+            float: left;
+            list-style: none;
+            background-color: #0f0;
+        }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <h1>Skyrim Alchemy</h1>
     <p>Search by Ingredient Effect</p>
 
-    
+    <div class="ingredient">
+        <h4>Blisterwort <span class="id">0004da25</span></h4>
+        <ul>
+            <li>Damage Stamina</li>
+            <li>Frenzy</li>
+            <li>Restore Health</li>
+            <li>Fortify Smithing</li>
+        </ul>
+    </div>
+
+    <div class="ingredient">
+        <h4>Eye of Sabre Cat <span class="id">0006bc07</span></h4>
+        <ul>
+            <li>Restore Stamina</li>
+            <li>Ravage Health</li>
+            <li>Damage Magicka</li>
+            <li>Restore Health</li>
+        </ul>
+    </div>
 </body>
 </html>
