@@ -1,0 +1,33 @@
+<mockup version="1.0" skin="sketch" measuredW="1130" measuredH="814" mockupW="531" mockupH="747">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="599" y="67" w="531" h="747" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="614" y="82" w="317" h="-1" measuredW="308" measuredH="50" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Skyrim%20Alchemy</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="723" y="199" w="281" h="-1" measuredW="186" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Type%20an%20ingredient%20or%20effect</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::SubTitle" x="655" y="400" w="-1" h="-1" measuredW="132" measuredH="33" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ingredients</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="931" y="247" w="-1" h="-1" measuredW="89" measuredH="33" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Potions</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Canvas" x="655" y="280" w="234" h="101" measuredW="100" measuredH="70" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::SubTitle" x="655" y="246" w="-1" h="-1" measuredW="136" measuredH="33" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Workspace</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Canvas" x="655" y="433" w="234" h="334" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Canvas" x="915" y="280" w="189" h="334" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
