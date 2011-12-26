@@ -2,7 +2,6 @@ Abecean Longfin	00106e1b	Weakness to Frost	Fortify Sneak	Weakness to Poison	Fort
 Bear Claws	0006bc02	Restore Stamina	Fortify Health	Fortify One-handed	Damage Magicka Regen	0.1	2
 Bee	000a9195	Restore Stamina	Ravage Stamina	Regenerate Stamina	Weakness to Shock	0.1	3
 Beehive Husk	000a9191	Resist Poison	Fortify Light Armor	Fortify Sneak	Fortify Destruction	1	5
-Berit's Ashes	000705b7	Damage Stamina	Resist Fire	Fortify Conjuration	Ravage Stamina	0.2	5
 Bleeding Crown	0004da20	Weakness to Fire	Fortify Block	Weakness to Poison	Resist Magic	0.3	10
 Blisterwort	0004da25	Damage Stamina	Frenzy	Restore Health	Fortify Smithing	0.2	12
 Blue Butterfly Wing	000727de	Damage Stamina	Fortify Conjuration	Damage Magicka Regen	Fortify Enchanting	0.1	2
@@ -47,7 +46,6 @@ Human Flesh	001016b3	Damage Health	Paralysis	Restore Magicka	Fortify Sneak	0.25	
 Human Heart	000b18cd	Damage Health	Damage Magicka	Damage Magicka Regen	Frenzy	1	0
 Ice Wraith Teeth	0003ad6a	Weakness to Frost	Fortify Heavy Armor	Invisibility	Weakness to Fire	0.25	30
 Imp Stool	0004da23	Damage Health	Lingering Damage Health	Paralysis	Restore Health	0.3	0
-Jarrin Root	0001bcbc	Damage Health	Damage Magicka	Damage Stamina	Damage Magicka Regen	0.5	10
 Jazbay Grapes	0006ac4a	Weakness to Magic	Fortify Magicka	Regenerate Magicka	Ravage Health	0.2	1
 Juniper Berries	0005076e	Weakness to Fire	Fortify Marksman	Regenerate Health	Damage Stamina Regen	0.1	1
 Large Antlers	0006bc0a	Restore Stamina	Fortify Stamina	Slow	Damage Stamina Regen	0.1	2
