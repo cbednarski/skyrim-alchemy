@@ -7,7 +7,7 @@ interface.
 
 ### Data
 
-The data used in this tool is derived from http://www.uesp.net/wiki/Skyrim_talk:Ingredients, and credit goes to the UESP
+The data used in this tool is derived from http://www.uesp.net/wiki/Skyrim:Ingredients, and credit goes to the UESP
 contributors. The UESP content is licensed under the Creative Commons Attribution-ShareAlike 2.5 license:
 http://creativecommons.org/licenses/by-sa/2.5/
 
