@@ -9,11 +9,21 @@
             font-family: "PT Sans", Helvetica, Arial, sans-serif;
             font-size: 13px;
         }
+        #skyrim-alchemy{
+            width:530px;
+            border:1px solid #ddd;
+            border-radius:10px;
+            margin:0 auto;
+            padding:20px 20px;
+        }
+        #skyrim-alchemy h1{
+            margin:0;
+        }
         .ingredient{
             width: 300px;
             height: 50px;
-            border: 1px solid #aaa;
-            background-color: #eee;
+            border: 1px solid #bbb;
+            background-color: #fafafa;
             margin-bottom: 3px;
             overflow: hidden;
             border-radius: 3px;
@@ -42,33 +52,38 @@
             margin-left: 30px;
             float: left;
             list-style: none;
-            background-color: #0f0;
+            color:#073;
+        }
+        .ingredient li.poison{
+            color:#700;
         }
     </style>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <h1>Skyrim Alchemy</h1>
-    <p>Search by Ingredient Effect</p>
+    <div id="skyrim-alchemy">
+        <h1>Skyrim Alchemy</h1>
+        <p>Search by Ingredient Effect</p>
 
-    <div class="ingredient">
-        <h4>Blisterwort <span class="id">0004da25</span></h4>
-        <ul>
-            <li>Damage Stamina</li>
-            <li>Frenzy</li>
-            <li>Restore Health</li>
-            <li>Fortify Smithing</li>
-        </ul>
-    </div>
+        <div class="ingredient">
+            <h4>Blisterwort <span class="id">0004da25</span></h4>
+            <ul>
+                <li class="poison">Damage Stamina</li>
+                <li class="poison">Frenzy</li>
+                <li>Restore Health</li>
+                <li>Fortify Smithing</li>
+            </ul>
+        </div>
 
-    <div class="ingredient">
-        <h4>Eye of Sabre Cat <span class="id">0006bc07</span></h4>
-        <ul>
-            <li>Restore Stamina</li>
-            <li>Ravage Health</li>
-            <li>Damage Magicka</li>
-            <li>Restore Health</li>
-        </ul>
+        <div class="ingredient">
+            <h4>Eye of Sabre Cat <span class="id">0006bc07</span></h4>
+            <ul>
+                <li>Restore Stamina</li>
+                <li class="poison">Ravage Health</li>
+                <li class="poison">Damage Magicka</li>
+                <li>Restore Health</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
