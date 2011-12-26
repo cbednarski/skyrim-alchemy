@@ -6,7 +6,7 @@
 // This script converts that table to json
 
 $source_file = 'uesp-ingredients-list.txt';
-$target_file = 'skyrim-ingredients.json';
+$target_file = 'skyrim-ingredients.js';
 $rows = array();
 
 $raw = file_get_contents($source_file);
