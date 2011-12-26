@@ -2,22 +2,41 @@
 <html>
 <head>
     <title>Skyrim Alchemy</title>
+    <script src="jquery-1.7.1.js"></script>
     <script src="skyrim-ingredients.js"></script>
     <script src="skyrim-alchemy.js"></script>
     <style>
         body{
             font-family: "PT Sans", Helvetica, Arial, sans-serif;
             font-size: 13px;
+            background-color:#eee;
+        }
+        .clear{
+            clear:both;
         }
         #skyrim-alchemy{
-            width:530px;
+            width:700px;
             border:1px solid #ddd;
-            border-radius:10px;
+            border-radius:4px;
             margin:0 auto;
             padding:20px 20px;
+            background-color:#fff;
         }
         #skyrim-alchemy h1{
             margin:0;
+        }
+        #alchemy-search{
+            display: block;
+            width: 20em;
+            margin: 0 auto;
+        }
+        #ingredient-list-container{
+            float: left;
+            width: 320px;
+        }
+        #ingredient-list{
+            height: 525px;
+            overflow-y: auto;
         }
         .ingredient{
             width: 300px;
@@ -63,29 +82,14 @@
 <body>
     <div id="skyrim-alchemy">
         <h1>Skyrim Alchemy</h1>
-        <p>Search by Ingredient Effect</p>
-        
-        <div id="ingredient-list"></div>
+        <p><input id="alchemy-search" type="text" placeholder="Search for ingredient or effect" /></p>
 
-        <div class="ingredient">
-            <h4>Blisterwort <span class="id">0004da25</span></h4>
-            <ul>
-                <li class="poison">Damage Stamina</li>
-                <li class="poison">Frenzy</li>
-                <li>Restore Health</li>
-                <li>Fortify Smithing</li>
-            </ul>
+        <div id="ingredient-list-container">
+            <h2>Ingredients</h2>
+            <div id="ingredient-list"></div>
         </div>
 
-        <div class="ingredient">
-            <h4>Eye of Sabre Cat <span class="id">0006bc07</span></h4>
-            <ul>
-                <li>Restore Stamina</li>
-                <li class="poison">Ravage Health</li>
-                <li class="poison">Damage Magicka</li>
-                <li>Restore Health</li>
-            </ul>
-        </div>
+        <div class="clear"></div>
     </div>
 </body>
 </html>

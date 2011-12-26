@@ -3,8 +3,15 @@
 var poison = ['Damage','Fear','Frenzy','Paralysis','Ravage','Slow','Weakness'];
 
 var sa = {
-    search: function(){
-
+    search: function(search,list){
+        return list.filter(function(item){
+            for(var i in [0,1,2,3,4,5]){
+                if(item[i].toLowerCase().indexOf(search.toLowerCase()) !== -1){
+                    return true;
+                }
+            }
+            return false;
+        });
     },
     build_list: function(items){
         var item, temp = '';
@@ -32,3 +39,14 @@ var sa = {
         return false;
     }
 };
+
+jQuery(document).ready(function(){
+    var list = jQuery('#ingredient-list');
+    var search = jQuery('#alchemy-search');
+
+    list.html(sa.build_list(ingredients));
+
+    search.keyup(function(){
+        jQuery('#ingredient-list').html(sa.build_list(sa.search(jQuery('#alchemy-search').val(),ingredients)));
+    });
+});
