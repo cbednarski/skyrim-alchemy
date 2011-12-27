@@ -6,39 +6,419 @@
         <text>Skyrim%20Alchemy</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="31" y="163" w="291" h="-1" measuredW="186" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="181" y="151" w="291" h="-1" measuredW="205" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Type%20an%20ingredient%20or%20effect</text>
+        <text>Search%20for%20ingredient%20or%20effect</text>
       </controlProperties>
     </control>
-    <control controlID="15" controlTypeID="__group__" x="31" y="280" w="291" h="505" measuredW="291" measuredH="505" zOrder="4" locked="false" isInGroup="-1">
-      <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="164" h="-1" measuredW="132" measuredH="33" zOrder="0" locked="false" isInGroup="15">
-          <controlProperties>
-            <text>Ingredients</text>
-          </controlProperties>
-        </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="33" w="291" h="472" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="15"/>
-      </groupChildrenDescriptors>
-    </control>
-    <control controlID="16" controlTypeID="__group__" x="333" y="130" w="291" h="135" measuredW="291" measuredH="135" zOrder="3" locked="false" isInGroup="-1">
-      <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="34" w="291" h="101" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="16"/>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="169" h="-1" measuredW="136" measuredH="33" zOrder="1" locked="false" isInGroup="16">
-          <controlProperties>
-            <text>Workspace</text>
-          </controlProperties>
-        </control>
-      </groupChildrenDescriptors>
-    </control>
-    <control controlID="17" controlTypeID="__group__" x="333" y="280" w="291" h="505" measuredW="291" measuredH="505" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="17" controlTypeID="__group__" x="333" y="428" w="291" h="357" measuredW="291" measuredH="357" zOrder="3" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="137" h="-1" measuredW="89" measuredH="33" zOrder="0" locked="false" isInGroup="17">
           <controlProperties>
             <text>Potions</text>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="33" w="291" h="472" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="17"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="28" w="291" h="329" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="17"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="34" controlTypeID="__group__" x="31" y="198" w="291" h="587" measuredW="291" measuredH="587" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="11" controlTypeID="__group__" x="0" y="0" w="291" h="587" measuredW="291" measuredH="587" zOrder="0" locked="false" isInGroup="34">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="__group__" x="0" y="0" w="291" h="587" measuredW="291" measuredH="587" zOrder="0" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="164" h="-1" measuredW="132" measuredH="33" zOrder="0" locked="false" isInGroup="0">
+                  <controlProperties>
+                    <text>Ingredients</text>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="38" w="291" h="549" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="0"/>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="1" controlTypeID="__group__" x="7" y="46" w="265" h="57" measuredW="265" measuredH="57" zOrder="1" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="1"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="2" controlTypeID="__group__" x="7" y="110" w="265" h="57" measuredW="265" measuredH="57" zOrder="2" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="2"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="3" controlTypeID="__group__" x="7" y="174" w="265" h="57" measuredW="265" measuredH="57" zOrder="3" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="3"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="3">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="3">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="3">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="3">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="3">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="4" controlTypeID="__group__" x="7" y="238" w="265" h="57" measuredW="265" measuredH="57" zOrder="4" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="4"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="5" controlTypeID="__group__" x="7" y="302" w="265" h="57" measuredW="265" measuredH="57" zOrder="5" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="5"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="6" controlTypeID="__group__" x="7" y="365" w="265" h="57" measuredW="265" measuredH="57" zOrder="6" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="6"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="7" controlTypeID="__group__" x="7" y="428" w="265" h="57" measuredW="265" measuredH="57" zOrder="7" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="7"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="8" controlTypeID="__group__" x="7" y="492" w="265" h="57" measuredW="265" measuredH="57" zOrder="8" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="8"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="8">
+                  <controlProperties>
+                    <size>12</size>
+                    <text>Ingredient%20Name</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="8">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%201</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="8">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%203</text>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="8">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%204</text>
+                  </controlProperties>
+                </control>
+                <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="8">
+                  <controlProperties>
+                    <size>9</size>
+                    <text>Effect%202</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="9" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="275" y="40" w="-1" h="547" measuredW="16" measuredH="100" zOrder="9" locked="false" isInGroup="11">
+              <controlProperties>
+                <value>8</value>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="40" controlTypeID="__group__" x="333" y="198" w="291" h="223" measuredW="291" measuredH="223" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="33" w="291" h="190" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="40"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="169" h="-1" measuredW="136" measuredH="33" zOrder="1" locked="false" isInGroup="40">
+          <controlProperties>
+            <text>Workspace</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="__group__" x="12" y="43" w="265" h="57" measuredW="265" measuredH="57" zOrder="2" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="2"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="2">
+              <controlProperties>
+                <size>12</size>
+                <text>Ingredient%20Name</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="2">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%201</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="2">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%203</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="2">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%204</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="2">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%202</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="3" controlTypeID="__group__" x="12" y="100" w="265" h="57" measuredW="265" measuredH="57" zOrder="3" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="3"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="4" y="5" w="-1" h="-1" measuredW="104" measuredH="20" zOrder="1" locked="false" isInGroup="3">
+              <controlProperties>
+                <size>12</size>
+                <text>Ingredient%20Name</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="50" y="20" w="-1" h="-1" measuredW="41" measuredH="16" zOrder="2" locked="false" isInGroup="3">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%201</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="50" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="3" locked="false" isInGroup="3">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%203</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="143" y="36" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="4" locked="false" isInGroup="3">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%204</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="143" y="20" w="-1" h="-1" measuredW="43" measuredH="16" zOrder="5" locked="false" isInGroup="3">
+              <controlProperties>
+                <size>9</size>
+                <text>Effect%202</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="44" controlTypeID="__group__" x="37" y="243" w="265" h="57" measuredW="265" measuredH="57" zOrder="6" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="265" h="57" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="44">
+          <controlProperties>
+            <backgroundAlpha>0.75</backgroundAlpha>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Arrow" x="144" y="22" w="55" h="10" measuredW="150" measuredH="100" zOrder="1" locked="false" isInGroup="44">
+          <controlProperties>
+            <backgroundAlpha>1</backgroundAlpha>
+            <curvature>0</curvature>
+            <direction>bottom</direction>
+            <leftArrow>false</leftArrow>
+          </controlProperties>
+        </control>
       </groupChildrenDescriptors>
     </control>
   </controls>
