@@ -145,6 +145,13 @@ var sa = {
         }
 
         jQuery('#workbench').html(temp);
+
+        if(this.workbench.length !== 0 && sa.check_workbench_filter()){
+            jQuery('#ingredient-list').html(sa.build_list(sa.filter_list()));
+        } else {
+            jQuery('#ingredient-list').html(sa.build_list(sa.search(jQuery('#alchemy-search').val(),ingredients)));
+        }
+
         sa.update_yield();
     },
     // Build HTML for yield and update DOM
@@ -157,6 +164,23 @@ var sa = {
         }
 
         jQuery('#yield').html(temp + '</ul>');
+    },
+    // Filter list based on what's in the workbench
+    filter_list: function(){
+        var filter = [];
+        var temp = [];
+
+        for(var i in this.workbench){
+            temp = this.get_effects(this.workbench[i]);
+            for(var t in temp){
+                filter = this.array_merge_unique(filter,this.search(temp[t],ingredients));
+            }
+        }
+
+        return filter;
+    },
+    check_workbench_filter: function(){
+        return (jQuery('#filter-workbench').attr('checked') == 'checked');
     }
 };
 
@@ -171,12 +195,13 @@ function remove(id)
 }
 
 jQuery(document).ready(function(){
-    var list = jQuery('#ingredient-list');
-    var search = jQuery('#alchemy-search');
+    jQuery('#ingredient-list').html(sa.build_list(ingredients));
 
-    list.html(sa.build_list(ingredients));
-
-    search.keyup(function(){
+    jQuery('#alchemy-search').keyup(function(){
         jQuery('#ingredient-list').html(sa.build_list(sa.search(jQuery('#alchemy-search').val(),ingredients)));
+    });
+
+    jQuery('#filter-workbench').change(function(){
+        sa.update_workbench();
     });
 });
