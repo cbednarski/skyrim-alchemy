@@ -99,3 +99,26 @@ body {
 .ingredient li.poison {
     color: #700;
 }
+
+#yield ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#yield li{
+    border: 1px solid #096;
+    display: block;
+    float: left;
+    clear: left;
+    margin-bottom: 1px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #A1E6CF;
+}
+
+#yield li.poison{
+    border: 1px solid #700;
+    background-color: #E6A1A1;
+}
