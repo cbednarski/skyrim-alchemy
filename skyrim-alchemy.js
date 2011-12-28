@@ -25,8 +25,12 @@ var sa = {
 
         return temp;
     },
-    to_ingredient: function(item){
-        var temp = '<div class="ingredient"><h4>' + item[0] + ' <span class="id">' + item[1] + '</span></h4><ul>';
+    to_ingredient: function(item, action){
+        if(action == null){
+            action = 'add';
+        }
+
+        var temp = '<div class="ingredient" onclick="' + action + '(\'' + item[1] + '\');"><h4>' + item[0] + ' <span class="id">' + item[1] + '</span></h4><ul>';
 
         for(var i = 2; i <= 5; i++){
             temp += '<li';
@@ -62,16 +66,21 @@ var sa = {
         }
         this.update_workbench();
     },
+    find: function(id, array){
+        for(var i in array){
+            if(array[i][1] == id){
+                return array[i];
+            }
+        }
+        return false;
+    },
     remove: function(id){
-        var temp = [];
-
         for(var i in this.workbench){
-            if(this.workbench[i][1] !== id){
-                temp.push(this.workbench[i]);
+            if(this.workbench[i][1] === id){
+                this.workbench.splice(i,1);
             }
         }
 
-        this.workbench = temp;
         this.update_workbench();
     },
     reset: function(){
@@ -82,12 +91,22 @@ var sa = {
         var temp = '';
 
         for(var i in this.workbench){
-            temp += this.to_ingredient(this.workbench[i]);
+            temp += this.to_ingredient(this.workbench[i], 'remove');
         }
 
         jQuery('#workbench').html(temp);
     }
 };
+
+function add(id)
+{
+    sa.add(sa.find(id, ingredients));
+}
+
+function remove(id)
+{
+    sa.remove(id);
+}
 
 jQuery(document).ready(function(){
     var list = jQuery('#ingredient-list');
