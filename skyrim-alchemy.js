@@ -60,7 +60,7 @@ var sa = {
                 this.workbench.push(item);
             }
         }
-        this.draw_workbench();
+        this.update_workbench();
     },
     remove: function(id){
         var temp = [];
@@ -72,13 +72,13 @@ var sa = {
         }
 
         this.workbench = temp;
-        this.draw_workbench();
+        this.update_workbench();
     },
     reset: function(){
         this.workbench = [];
-        this.draw_workbench();
+        this.update_workbench();
     },
-    draw_workbench: function(){
+    update_workbench: function(){
         var temp = '';
 
         for(var i in this.workbench){
