@@ -45,6 +45,29 @@ var sa = {
     get_effects: function(ingredient){
         return [ingredient[2],ingredient[3],ingredient[4],ingredient[5]];
     },
+    mix: function(ingredients){
+        var effects = {}, temp = [];
+
+        for(var i in ingredients){
+            temp = sa.get_effects(ingredients[i]);
+
+            for(var t in temp){
+                if(!effects.hasOwnProperty(temp[t])){
+                    effects[temp[t]] = 1;
+                } else {
+                    effects[temp[t]] += 1;
+                }
+            }
+        }
+
+        for(var e in effects){
+            if(effects[e] < 2){
+                delete effects[e];
+            }
+        }
+
+        return effects;
+    },
     is_poison: function(effect){
         for(var p in this.poison){
             if(effect.indexOf(this.poison[p]) !== -1){
@@ -98,6 +121,17 @@ var sa = {
         }
 
         jQuery('#workbench').html(temp);
+        sa.update_yield();
+    },
+    update_yield: function(){
+        var effects = this.mix(this.workbench);
+        var temp = '<ul>';
+
+        for(var e in effects){
+            temp += '<li' + (sa.is_poison(e) ? ' class="poison"' : '') + '>' + e + '</li>';
+        }
+
+        jQuery('#yield').html(temp + '</ul>');
     }
 };
 
