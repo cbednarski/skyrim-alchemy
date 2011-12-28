@@ -75,6 +75,17 @@ var sa = {
 
         return effects;
     },
+    array_merge_unique: function(array1, array2){
+        array1 = array1.concat(array2).sort();
+
+        for(var a in array1){
+            if(array1[a] == array1[parseInt(a)+1]){
+                array1.splice(a,1);
+            }
+        }
+
+        return array1;
+    },
     // Is this effect a poison?
     is_poison: function(effect){
         for(var p in this.poison){
