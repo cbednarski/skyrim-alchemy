@@ -138,7 +138,7 @@ var sa = {
     },
     // Build HTML for yield and update DOM
     update_yield: function(){
-        var effects = this.mix(this.workbench);
+        var effects = this.mix_filter(this.mix(this.workbench));
         var temp = '<ul>';
 
         for(var e in effects){
