@@ -61,6 +61,7 @@ body {
     margin-bottom: 3px;
     overflow: hidden;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .ingredient h4, .ingredient ul, .ingredient li {
