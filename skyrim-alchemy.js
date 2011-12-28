@@ -42,6 +42,9 @@ var sa = {
 
         return temp + '</ul></div>';
     },
+    get_effects: function(ingredient){
+        return [ingredient[2],ingredient[3],ingredient[4],ingredient[5]];
+    },
     is_poison: function(effect){
         for(var p in this.poison){
             if(effect.indexOf(this.poison[p]) !== -1){
