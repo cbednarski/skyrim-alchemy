@@ -1,11 +1,10 @@
 "use strict";
 
 var sa = {
-    // Variables
     poison: ['Damage','Fear','Frenzy','Paralysis','Ravage','Slow','Weakness'],
     workbench: [],
 
-    // Functions
+    // Search list of ingredients for specified string (all fields)
     search: function(search,list){
         return list.filter(function(item){
             for(var i in [0,1,2,3,4,5]){
@@ -16,6 +15,7 @@ var sa = {
             return false;
         });
     },
+    // Build HTML for list of ingredients
     build_list: function(items){
         var item, temp = '';
 
@@ -25,6 +25,7 @@ var sa = {
 
         return temp;
     },
+    // Build HTML for this ingredient; action specifies the onclick handler
     to_ingredient: function(item, action){
         if(action == null){
             action = 'add';
@@ -42,9 +43,11 @@ var sa = {
 
         return temp + '</ul></div>';
     },
+    // Get list of effects from the specified ingredient
     get_effects: function(ingredient){
         return [ingredient[2],ingredient[3],ingredient[4],ingredient[5]];
     },
+    // Mix ingredients together to get combined list of effects
     mix: function(ingredients){
         var effects = {}, temp = [];
 
@@ -60,6 +63,10 @@ var sa = {
             }
         }
 
+        return effects;
+    },
+    // After mixing, filter effects that match
+    mix_filter: function(effects){
         for(var e in effects){
             if(effects[e] < 2){
                 delete effects[e];
@@ -68,6 +75,7 @@ var sa = {
 
         return effects;
     },
+    // Is this effect a poison?
     is_poison: function(effect){
         for(var p in this.poison){
             if(effect.indexOf(this.poison[p]) !== -1){
@@ -76,6 +84,7 @@ var sa = {
         }
         return false;
     },
+    // Add item to workbench
     add: function(item){
         if(this.workbench.length < 3){
             var present = false;
@@ -92,6 +101,7 @@ var sa = {
         }
         this.update_workbench();
     },
+    // Find item by id (e.g. 000a9195)
     find: function(id, array){
         for(var i in array){
             if(array[i][1] == id){
@@ -100,6 +110,7 @@ var sa = {
         }
         return false;
     },
+    // Remove item from workbench by id
     remove: function(id){
         for(var i in this.workbench){
             if(this.workbench[i][1] === id){
@@ -109,10 +120,12 @@ var sa = {
 
         this.update_workbench();
     },
+    // Clear the workbench
     reset: function(){
         this.workbench = [];
         this.update_workbench();
     },
+    // Build HTML for workbench and update DOM
     update_workbench: function(){
         var temp = '';
 
@@ -123,6 +136,7 @@ var sa = {
         jQuery('#workbench').html(temp);
         sa.update_yield();
     },
+    // Build HTML for yield and update DOM
     update_yield: function(){
         var effects = this.mix(this.workbench);
         var temp = '<ul>';
