@@ -19,7 +19,16 @@ var sa = {
     build_list: function(items){
         var item, temp = '';
 
-        for(item in items){
+        mainloop: for(item in items){
+            for(var w in this.workbench){
+                // If we already have the item in the workbench then we don't want to show it in the list of ingredients
+                // and even though putting this logic here *and* using continue is a kludgey way to do it, it's faster
+                // than iterating over the whole stack 4 times.
+                if(items[item][1] == this.workbench[w][1]){
+                    continue mainloop;
+                }
+            }
+
             temp += this.to_ingredient(items[item]);
         }
 
@@ -122,7 +131,7 @@ var sa = {
         return false;
     },
     // Remove item from workbench by id
-    remove: function(id){
+    remove_from_workbench: function(id){
         for(var i in this.workbench){
             if(this.workbench[i][1] === id){
                 this.workbench.splice(i,1);
@@ -191,7 +200,7 @@ function add(id)
 
 function remove(id)
 {
-    sa.remove(id);
+    sa.remove_from_workbench(id);
 }
 
 jQuery(document).ready(function(){
