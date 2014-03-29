@@ -21,9 +21,11 @@ var sa = {
 
         mainloop: for(item in items){
             for(var w in this.workbench){
-                // If we already have the item in the workbench then we don't want to show it in the list of ingredients
-                // and even though putting this logic here *and* using continue is a kludgey way to do it, it's faster
-                // than iterating over the whole stack 4 times.
+                // If we already have the item in the workbench then we don't
+                // want to show it in the list of ingredients and even though
+                // putting this logic here *and* using continue is a kludgey
+                // way to do it, it's faster than iterating over the whole
+                // stack 4 times.
                 if(items[item][1] == this.workbench[w][1]){
                     continue mainloop;
                 }
@@ -40,7 +42,9 @@ var sa = {
             action = 'add';
         }
 
-        var temp = '<div class="ingredient" onclick="' + action + '(\'' + item[1] + '\');"><h4>' + item[0] + ' <span class="id">' + item[1] + '</span></h4><ul>';
+        var temp = '<div class="ingredient" onclick="' + action +
+            '(\'' + item[1] + '\');"><h4>' + item[0] + ' <span class="id">' +
+            item[1] + '</span></h4><ul>';
 
         for(var i = 2; i <= 5; i++){
             temp += '<li';
@@ -158,7 +162,8 @@ var sa = {
         if(this.workbench.length !== 0 && sa.check_workbench_filter()){
             jQuery('#ingredient-list').html(sa.build_list(sa.filter_list()));
         } else {
-            jQuery('#ingredient-list').html(sa.build_list(sa.search(jQuery('#alchemy-search').val(),ingredients)));
+            jQuery('#ingredient-list').html(sa.build_list(
+                sa.search(jQuery('#alchemy-search').val(),ingredients)));
         }
 
         sa.update_yield();
@@ -169,7 +174,8 @@ var sa = {
         var temp = '<ul>';
 
         for(var e in effects){
-            temp += '<li' + (sa.is_poison(e) ? ' class="poison"' : '') + '>' + e + '</li>';
+            temp += '<li' + (sa.is_poison(e) ? ' class="poison"' : '') +
+                '>' + e + '</li>';
         }
 
         jQuery('#yield').html(temp + '</ul>');
@@ -182,7 +188,8 @@ var sa = {
         for(var i in this.workbench){
             temp = this.get_effects(this.workbench[i]);
             for(var t in temp){
-                filter = this.array_merge_unique(filter,this.search(temp[t],ingredients));
+                filter = this.array_merge_unique(
+                    filter,this.search(temp[t],ingredients));
             }
         }
 
@@ -207,7 +214,8 @@ jQuery(document).ready(function(){
     jQuery('#ingredient-list').html(sa.build_list(ingredients));
 
     jQuery('#alchemy-search').keyup(function(){
-        jQuery('#ingredient-list').html(sa.build_list(sa.search(jQuery('#alchemy-search').val(),ingredients)));
+        jQuery('#ingredient-list').html(sa.build_list(
+            sa.search(jQuery('#alchemy-search').val(),ingredients)));
     });
 
     jQuery('#filter-workbench').change(function(){
