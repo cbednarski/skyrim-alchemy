@@ -5,8 +5,8 @@
 // Name, ID, Effect 1, Effect 2, Effect 3, Effect 4, Weight, Value
 // This script converts that table to json
 
-$source_file = 'uesp-ingredients-list.txt';
-$target_file = 'skyrim-ingredients.js';
+$source_file = __DIR__ . '/uesp-ingredients-list.txt';
+$target_file = __DIR__ . '/../src/skyrim-ingredients.js';
 $rows = array();
 
 $raw = file_get_contents($source_file);
@@ -19,7 +19,7 @@ foreach($rows as $key => $var)
 	// Convert weight and value to numeric types
 	$temp[6] = floatval($temp[6]);
 	$temp[7] = floatval($temp[7]);
-	
+
 	$rows[$key] = $temp;
 }
 
