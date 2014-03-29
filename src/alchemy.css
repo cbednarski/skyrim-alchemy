@@ -1,17 +1,37 @@
 body {
-    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 13px;
+    background-color: #3E89D8;
+    padding: 0;
+    margin: 0;
+}
+
+code, pre {
+    font-family: "Source Code Pro", Courier, monospace;
     background-color: #eee;
 }
 
 .clear {
     clear: both;
+    font-family: 
+}
+
+#nav {
+    background-color: rgba(255,255,255,.4);
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#nav a {
+    text-decoration: none;
+}
+
+#nav a:hover {
+    color: #777;
 }
 
 #skyrim-alchemy {
-    width: 700px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px 20px;
     background-color: #fff;
