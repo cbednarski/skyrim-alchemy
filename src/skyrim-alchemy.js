@@ -178,7 +178,7 @@ var sa = {
    * Find item by id (e.g. 000a9195)
    * @param id
    * @param array
-   * @returns {Array|false}
+   * @returns {Array|boolean}
    */
   find: function (id, array) {
     for (var i in array) {
