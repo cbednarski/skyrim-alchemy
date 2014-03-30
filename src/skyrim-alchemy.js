@@ -55,7 +55,7 @@ var sa = {
    * @returns {string}
    */
   to_ingredient: function (item, action) {
-    if (action == null) {
+    if (action === null) {
       action = 'add';
     }
 
