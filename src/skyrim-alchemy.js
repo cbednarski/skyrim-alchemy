@@ -18,15 +18,13 @@ function filterElementByClass(element, classname) {
 function removeIngredient(args) {
   var el = filterElementByClass(args.target, "ingredient");
   if (el != null) {
-    console.log("removing", el.dataset.id);
     remove(el.dataset.id);
   }
 }
 
 function addIngredient(args) {
   var el = filterElementByClass(args.target, "ingredient");
-    if (el != null) {
-    console.log("adding", el.dataset.id);
+  if (el != null) {
     add(el.dataset.id);
   }
 }
@@ -34,6 +32,14 @@ function addIngredient(args) {
 function init() {
   document.getElementById('ingredient-list').addEventListener('click', addIngredient);
   document.getElementById('workbench').addEventListener('click', removeIngredient);
+
+  // Make / focus the search bar
+  window.addEventListener('keyup', function(event) {
+    if (event.keyIdentifier == "U+002F") {
+      document.getElementById('alchemy-search').focus();
+      event.stopPropagation();
+    }
+  })
 }
 
 window.addEventListener("load", init);
