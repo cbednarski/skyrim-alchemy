@@ -1,6 +1,43 @@
 // jshint -W097
 "use strict";
 
+// filterElementByClass will return the first item or parent
+// that matches the specified class. If it exhausts the list
+// of parent items and does not find a match it will return
+// null
+function filterElementByClass(element, classname) {
+  if (element.className === classname) {
+    return element
+  } else if (element.parentNode != null) {
+    return filterElementByClass(element.parentNode, classname)
+  } else {
+    return null
+  }
+}
+
+function removeIngredient(args) {
+  var el = filterElementByClass(args.target, "ingredient");
+  if (el != null) {
+    console.log("removing", el.dataset.id);
+    remove(el.dataset.id);
+  }
+}
+
+function addIngredient(args) {
+  var el = filterElementByClass(args.target, "ingredient");
+    if (el != null) {
+    console.log("adding", el.dataset.id);
+    add(el.dataset.id);
+  }
+}
+
+function init() {
+  document.getElementById('ingredient-list').addEventListener('click', addIngredient);
+  document.getElementById('workbench').addEventListener('click', removeIngredient);
+}
+
+window.addEventListener("load", init);
+
 var sa = {
   poison: ['Damage', 'Fear', 'Frenzy', 'Paralysis', 'Ravage', 'Slow', 'Weakness'],
   workbench: [],
@@ -55,12 +92,12 @@ var sa = {
    * @returns {string}
    */
   to_ingredient: function (item, action) {
-    if (action === null) {
+    if (action === null || action === undefined) {
       action = 'add';
     }
 
-    var temp = '<div class="ingredient" onclick="' + action +
-      '(\'' + item[1] + '\');"><h4>' + item[0] + ' <span class="id">' +
+    var temp = '<div class="ingredient" data-id="' +
+      item[1] + '"><h4>' + item[0] + ' <span class="id">' +
       item[1] + '</span></h4><ul>';
 
     for (var i = 2; i <= 5; i++) {

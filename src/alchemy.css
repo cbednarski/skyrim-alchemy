@@ -13,7 +13,6 @@ code, pre {
 
 .clear {
     clear: both;
-    font-family: 
 }
 
 #nav {
@@ -114,6 +113,7 @@ code, pre {
     list-style: none;
     color: #096;
     font-size: .9em;
+    white-space: nowrap;
 }
 
 .ingredient li.poison {
