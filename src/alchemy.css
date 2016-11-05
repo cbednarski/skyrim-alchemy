@@ -79,6 +79,10 @@ code, pre {
     cursor: pointer;
 }
 
+.ingredient.hidden {
+    display: none;
+}
+
 .ingredient h4, .ingredient ul, .ingredient li {
     margin: 0;
     padding: 0;
