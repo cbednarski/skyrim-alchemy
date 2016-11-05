@@ -1,6 +1,12 @@
 // jshint -W097
 "use strict";
 
+var dom = {
+  id: function(identifier) {
+    return document.getElementById(identifier)
+  }
+}
+
 // filterElementByClass will return the first item or parent
 // that matches the specified class. If it exhausts the list
 // of parent items and does not find a match it will return
@@ -18,90 +24,76 @@ function filterElementByClass(element, classname) {
 function removeIngredient(args) {
   var el = filterElementByClass(args.target, "ingredient");
   if (el != null) {
-    remove(el.dataset.id);
+    sa.workbench_remove(el.dataset.id);
   }
 }
 
 function addIngredient(args) {
   var el = filterElementByClass(args.target, "ingredient");
   if (el != null) {
-    add(el.dataset.id);
+    sa.workbench_add(sa.find(el.dataset.id, ingredients));
   }
 }
 
 function init() {
-  document.getElementById('ingredient-list').addEventListener('click', addIngredient);
-  document.getElementById('workbench').addEventListener('click', removeIngredient);
+  // Add click handlers for workbench and ingredient list
+  dom.id('ingredient-list').addEventListener('click', addIngredient)
+  dom.id('workbench').addEventListener('click', removeIngredient)
 
   // Make / focus the search bar
   window.addEventListener('keyup', function(event) {
     if (event.keyIdentifier == "U+002F") {
-      document.getElementById('alchemy-search').focus();
-      event.stopPropagation();
+      dom.id('alchemy-search').focus()
+      event.stopPropagation()
     }
   })
+
+  // Add key event handler for search box
+  dom.id('alchemy-search').addEventListener('keyup', function(event) {
+    sa.filter_ingredients_by_search(dom.id('alchemy-search').value)
+  })
+
+  // Add change handler for the "Only show ingredients..." checkbox
+  dom.id('filter-workbench').addEventListener('change', function () {
+    sa.update_workbench()
+  })
+
+  // Initialize the list of ingredients
+  dom.id('ingredient-list').innerHTML = sa.build_list(ingredients)
 }
 
-window.addEventListener("load", init);
+// Initialize event handlers after the DOM has loaded.
+window.addEventListener("load", function load(event) {
+  window.removeEventListener("load", load, false)
+  init()
+});
 
 var sa = {
   poison: ['Damage', 'Fear', 'Frenzy', 'Paralysis', 'Ravage', 'Slow', 'Weakness'],
   workbench: [],
 
-  /**
-   * Search list of ingredients for specified string (all fields)
-   * @param search
-   * @param list
-   * @returns {*}
-   */
-  search: function (search, list) {
-    return list.filter(function (item) {
-      for (var i in [0, 1, 2, 3, 4, 5]) {
-        if (item[i].toLowerCase().indexOf(search.toLowerCase()) !== -1) {
-          return true;
-        }
+  search_item: function(item, term) {
+    for (var i in [0, 1, 2, 3, 4, 5]) {
+      if (item[i].toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+        return true;
       }
-      return false;
-    });
+    }
+    return false;
   },
 
-  /**
-   * Build HTML for list of ingredients
-   * @param items
-   * @returns {string}
-   */
+  // Build HTML for list of ingredients
   build_list: function (items) {
     var item, temp = '';
 
-    mainloop: for (item in items) {
-      for (var w in this.workbench) {
-        // If we already have the item in the workbench then we don't
-        // want to show it in the list of ingredients and even though
-        // putting this logic here *and* using continue is a kludgey
-        // way to do it, it's faster than iterating over the whole
-        // stack 4 times.
-        if (items[item][1] == this.workbench[w][1]) {
-          continue mainloop;
-        }
-      }
-
+    for (item in items) {
       temp += this.to_ingredient(items[item]);
     }
 
     return temp;
   },
 
-  /**
-   * Build HTML for this ingredient; action specifies the onclick handler
-   * @param item
-   * @param action
-   * @returns {string}
-   */
-  to_ingredient: function (item, action) {
-    if (action === null || action === undefined) {
-      action = 'add';
-    }
-
+  // Build HTML for this ingredient
+  to_ingredient: function (item) {
     var temp = '<div class="ingredient" data-id="' +
       item[1] + '"><h4>' + item[0] + ' <span class="id">' +
       item[1] + '</span></h4><ul>';
@@ -117,20 +109,12 @@ var sa = {
     return temp + '</ul></div>';
   },
 
-  /**
-   * Get list of effects from the specified ingredient
-   * @param ingredient
-   * @returns {Array}
-   */
+  // Get list of effects from the specified ingredient
   get_effects: function (ingredient) {
     return [ingredient[2], ingredient[3], ingredient[4], ingredient[5]];
   },
 
-  /**
-   * Mix ingredients together to get combined list of effects
-   * @param ingredients
-   * @returns {{}}
-   */
+  // Mix ingredients together to get combined list of effects
   mix: function (ingredients) {
     var effects = {}, temp;
 
@@ -149,11 +133,7 @@ var sa = {
     return effects;
   },
 
-  /**
-   * After mixing ingredients, filter effects that match
-   * @param effects
-   * @returns {Array}
-   */
+  // After mixing ingredients, filter effects that match
   mix_filter: function (effects) {
     for (var e in effects) {
       if (effects[e] < 2) {
@@ -164,12 +144,7 @@ var sa = {
     return effects;
   },
 
-  /**
-   * Merge two arrays without duplicate entries
-   * @param array1
-   * @param array2
-   * @returns {Array}
-   */
+  // Merge two arrays without duplicate entries
   array_merge_unique: function (array1, array2) {
     array1 = array1.concat(array2).sort();
 
@@ -182,11 +157,7 @@ var sa = {
     return array1;
   },
 
-  /**
-   * Is this effect a poison?
-   * @param effect
-   * @returns {boolean}
-   */
+  // Is this effect a poison?
   is_poison: function (effect) {
     for (var p in this.poison) {
       if (effect.indexOf(this.poison[p]) !== -1) {
@@ -196,10 +167,7 @@ var sa = {
     return false;
   },
 
-  /**
-   * Add item to workbench
-   * @param item
-   */
+  // Add item to workbench
   workbench_add: function (item) {
     if (this.workbench.length < 3) {
       var present = false;
@@ -217,12 +185,7 @@ var sa = {
     this.update_workbench();
   },
 
-  /**
-   * Find item by id (e.g. 000a9195)
-   * @param id
-   * @param array
-   * @returns {Array|boolean}
-   */
+  // Find item by id (e.g. 000a9195)
   find: function (id, array) {
     for (var i in array) {
       if (array[i][1] == id) {
@@ -232,10 +195,7 @@ var sa = {
     return false;
   },
 
-  /**
-   * Remove item from workbench by id
-   * @param id
-   */
+  // Remove item from workbench by id
   workbench_remove: function (id) {
     for (var i in this.workbench) {
       if (this.workbench[i][1] === id) {
@@ -246,39 +206,32 @@ var sa = {
     this.update_workbench();
   },
 
-  /**
-   * Clear the workbench
-   */
+  // Clear the workbench
   reset: function () {
     this.workbench = [];
     this.update_workbench();
   },
 
-  /**
-   * Build HTML for workbench and update DOM
-   */
+  // Build HTML for workbench and update DOM
   update_workbench: function () {
     var temp = '';
-
     for (var i in this.workbench) {
-      temp += this.to_ingredient(this.workbench[i], 'remove');
+      temp += this.to_ingredient(this.workbench[i]);
     }
+    dom.id('workbench').innerHTML = temp;
 
-    jQuery('#workbench').html(temp);
+    // this.filter_ingredients()
 
     if (this.workbench.length !== 0 && sa.check_workbench_filter()) {
-      jQuery('#ingredient-list').html(sa.build_list(sa.filter_list()));
+      this.filter_ingredients_by_workbench()
     } else {
-      jQuery('#ingredient-list').html(sa.build_list(
-        sa.search(jQuery('#alchemy-search').val(), ingredients)));
+      this.filter_ingredients_by_search(dom.id('alchemy-search').value)
     }
 
     sa.update_yield();
   },
 
-  /**
-   * Build HTML for yield and update DOM
-   */
+  // Build HTML for yield and update DOM
   update_yield: function () {
     var effects = this.mix_filter(this.mix(this.workbench));
     var temp = '<ul>';
@@ -288,49 +241,81 @@ var sa = {
         '>' + e + '</li>';
     }
 
-    jQuery('#yield').html(temp + '</ul>');
+    dom.id('yield').innerHTML = temp + '</ul>';
   },
 
-  /**
-   * Filter list based on what's in the workbench
-   * @returns {Array}
-   */
-  filter_list: function () {
-    var filter = [], temp;
-
+  get_workbench_effects: function() {
+    var effects = [];
     for (var i in this.workbench) {
-      temp = this.get_effects(this.workbench[i]);
-      for (var t in temp) {
-        filter = this.array_merge_unique(
-          filter, this.search(temp[t], ingredients));
+      effects = this.array_merge_unique(effects, this.get_effects(this.workbench[i]))
+    }
+    return effects
+  },
+
+  workbench_has: function(search_item) {
+    for (var item in this.workbench) {
+      if (this.workbench[item][0] == search_item[0]) {
+        return true
       }
     }
-
-    return filter;
+    return false
   },
+
+  // Hide items in the list that we've already added or don't want to show
+  filter_ingredients_by_workbench: function() {
+    var that = this;
+    this.filter_ingredients_by_function(function(ingredient) {
+      // Always hide ingredients that are in the workbench
+      if (that.workbench_has(ingredient)) {
+        return false
+      }
+      var effects = that.get_workbench_effects()
+      for (var i in effects) {
+        if (that.search_item(ingredient, effects[i])) {
+          return true
+        }
+      }
+      return false
+    })
+  },
+
+  filter_ingredients_by_search: function(term) {
+    var that = this;
+    this.filter_ingredients_by_function(function(ingredient) {
+      // Always hide ingredients that are in the workbench
+      if (that.workbench_has(ingredient)) {
+        return false
+      }
+      return that.search_item(ingredient, term)
+    })
+  },
+
+  // Pass in a callback to be called on a DOM element.
+  // If the callback returns true, the item will be displayed.
+  // If the callback returns false, the item will be hidden.
+  //
+  // WARNING: #ingredient-list and var ingredients have to have
+  // the same contents in the same order or this will not work.
+  filter_ingredients_by_function: function(func) {
+    var ingredientList = dom.id('ingredient-list').children
+    for (var i = 0; i < ingredients.length; i++) {
+      // Check if the callback is true/false and apply the change to the class
+      // if an only if we need to. The DOM is evaluated when add/remove is called
+      // even if the list is not changed so don't take action unless necessary.
+      var classes = ingredientList[i].classList
+      if (func(ingredients[i])) {
+        if (classes.contains("hidden")) {
+          classes.remove("hidden")
+        }
+      } else {
+        if (!classes.contains("hidden")) {
+          classes.add("hidden")
+        }
+      }
+    }
+  },
+
   check_workbench_filter: function () {
-    return (jQuery('#filter-workbench').attr('checked') == 'checked');
+    return (dom.id('filter-workbench').checked);
   }
 };
-
-function add(id) {
-  sa.workbench_add(sa.find(id, ingredients));
-}
-
-function remove(id) {
-  sa.workbench_remove(id);
-}
-
-jQuery(document).ready(function () {
-  /* global ingredients: false */
-  jQuery('#ingredient-list').html(sa.build_list(ingredients));
-
-  jQuery('#alchemy-search').keyup(function () {
-    jQuery('#ingredient-list').html(sa.build_list(
-      sa.search(jQuery('#alchemy-search').val(), ingredients)));
-  });
-
-  jQuery('#filter-workbench').change(function () {
-    sa.update_workbench();
-  });
-});
